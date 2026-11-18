@@ -1,5 +1,5 @@
 name: almulzim
-description: المُلزم - study discipline system: Moodle import, smart plan, strict focus lock, restricted YouTube, downloads, documents.
+description: "Almulzim - study discipline system: Moodle import, smart plan, strict focus lock, restricted YouTube, downloads, documents."
 publish_to: none
 version: 1.0.0+1
 environment:
