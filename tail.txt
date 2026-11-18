@@ -1,0 +1,125 @@
+Recreating project ....
+  .idea/libraries/Dart_SDK.xml (created)
+  .idea/libraries/KotlinJavaRuntime.xml (created)
+  .idea/runConfigurations/main_dart.xml (created)
+  .idea/modules.xml (created)
+  .idea/workspace.xml (created)
+  android/gradle/wrapper/gradle-wrapper.properties (created)
+  android/gradle.properties (created)
+  android/settings.gradle.kts (created)
+  android/.gitignore (created)
+  android/app/src/profile/AndroidManifest.xml (created)
+  android/app/src/main/res/drawable-v21/launch_background.xml (created)
+  android/app/src/main/res/mipmap-xhdpi/ic_launcher.png (created)
+  android/app/src/main/res/values-night/styles.xml (created)
+  android/app/src/main/res/drawable/launch_background.xml (created)
+  android/app/src/main/res/mipmap-hdpi/ic_launcher.png (created)
+  android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png (created)
+  android/app/src/main/res/mipmap-mdpi/ic_launcher.png (created)
+  android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png (created)
+  android/app/src/main/res/values/styles.xml (created)
+  android/app/src/main/AndroidManifest.xml (created)
+  android/app/src/debug/AndroidManifest.xml (created)
+  almulzim.iml (created)
+  android/build.gradle.kts (created)
+  android/almulzim_android.iml (created)
+  android/app/build.gradle.kts (created)
+  android/app/src/main/kotlin/com/mohammed/almulzim/MainActivity.kt (created)
+  analysis_options.yaml (created)
+  test/widget_test.dart (created)
+Got dependencies.
+Wrote 31 files.
+
+All done!
+You can find general documentation for Flutter at: https://docs.flutter.dev/
+Detailed API documentation is available at: https://api.flutter.dev/
+If you prefer video documentation, consider: https://www.youtube.com/c/flutterdev
+
+In order to run your application, type:
+
+  $ flutter run
+
+Your application code is in ./lib/main.dart.
+
+======
+       ^
+test/widget_test.dart:16:35: Error: Couldn't find constructor 'MyApp'.
+    await tester.pumpWidget(const MyApp());
+                                  ^^^^^
+test/widget_test.dart:23:34: Error: Undefined name 'Icons'.
+    await tester.tap(find.byIcon(Icons.add));
+                                 ^^^^^
+lib/main.dart:63:18: Error: The method 'StrictWebPage' isn't defined for the type '_BootState'.
+ - '_BootState' is from 'package:almulzim/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'StrictWebPage'.
+          next = StrictWebPage(url: target, leftMs: left);
+                 ^^^^^^^^^^^^^
+lib/main.dart:65:18: Error: The method 'StrictMoodlePage' isn't defined for the type '_BootState'.
+ - '_BootState' is from 'package:almulzim/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'StrictMoodlePage'.
+          next = StrictMoodlePage(url: target, leftMs: left);
+                 ^^^^^^^^^^^^^^^^
+lib/focus/storage.dart:356:49: Error: Undefined name 'kInk2'.
+          style: TextStyle(fontSize: 12, color: kInk2),
+                                                ^^^^^
+.
+
+::endgroup::
+::group::✅ Passing tests
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: classifyUrl by extension
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: classifyUrl by Moodle module
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: classifyUrl external
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: normalizeUrl resolves, drops fragments, rejects non-http
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCourseLinks unique by id, longest title wins
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage title and sections
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage activity names have hidden text removed
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage week 1 items
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage nav, availability restrictions and footer links are ignored
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage section pages of the same course are detected
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage page without section markup still yields one section
+✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: submission status is read from the status label only
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages folder files
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages page links include embedded media but not the page itself
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages book chapters
+✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: english due date with time
+✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: month-first format
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages URL activity target and resource target
+✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: arabic levantine month and Arabic-Indic digits
+✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: quiz closes
+✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: nothing found
+✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: model json tree round-trips
+✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: every provider has a model and base url
+✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: unknown provider falls back to the first
+✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: settings round-trip keeps provider and base url
+✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: ai readiness: key required except custom/local
+✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: explicit chapter numbers, Latin and Arabic digits
+✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: items in one generic section are split into batches by upload rhythm
+✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: explicit numbers win and meaningful sections are kept
+✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: inside a chapter videos come before files and assignments
+✅ /home/runner/work/almulzim/almulzim/test/alerts_test.dart: reminders are moved into the allowed study window
+✅ /home/runner/work/almulzim/almulzim/test/alerts_test.dart: news notification names the course and the kind
+✅ /home/runner/work/almulzim/almulzim/test/alerts_test.dart: reminders: deadline, exam and daily study; submitted work is skipped
+✅ /home/runner/work/almulzim/almulzim/test/viewer_test.dart: YouTube video ids are read from every common link shape
+✅ /home/runner/work/almulzim/almulzim/test/viewer_test.dart: the browser only allows Moodle, YouTube and Google Drive / Docs
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: Pool never exceeds its limit and finishes everything
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: crawls a course tree, resolving files, folders, urls and pages
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: a failing page is retried once, recorded, and does not stop the crawl
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: never requests other sites
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: every page is requested at most once per attempt (no duplicates)
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: a day never holds more study than the allowed window
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: only study items become tasks, durations come from the title or defaults
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: the user-typed minutes win over every estimate
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: plenty of time: feasible, nothing left over, work starts today
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: not enough time: the shortfall is reported
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: the course with the closer exam gets more of today
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: finished items leave the plan and raise progress
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: requests run in parallel but stay under the concurrency limit
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: computeNews lists only items that were not there before
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: settings and study data survive a JSON round trip
+✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: last study day is chosen by the user; a course with an exam stops the day before it
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: several courses are crawled at the same time
+✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: section pages are merged into the course
+::endgroup::
+
+::error::59 tests passed, 1 failed.
+======

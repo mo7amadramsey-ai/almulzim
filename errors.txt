@@ -1,0 +1,82 @@
+29:  test/widget_test.dart (created)
+42:Your application code is in ./lib/main.dart.
+45:Error: Couldn't resolve the package 'material_ui' in 'package:material_ui/material_ui.dart'.
+46:test/widget_test.dart:9:8: Error: Not found: 'package:material_ui/material_ui.dart'
+50:✅ /home/runner/work/almulzim/almulzim/test/notebook_test.dart: fmtTs formats minutes and hours
+51:✅ /home/runner/work/almulzim/almulzim/test/notebook_test.dart: parseSections reads valid sections and never attributes unknown sources to the lecturer
+52:✅ /home/runner/work/almulzim/almulzim/test/notebook_test.dart: parseSections rejects garbage with an Arabic message
+53:✅ /home/runner/work/almulzim/almulzim/test/notebook_test.dart: chunkLines never cuts a line and respects the limit
+54:✅ /home/runner/work/almulzim/almulzim/test/notebook_test.dart: lineSeconds parses timestamps
+55:✅ /home/runner/work/almulzim/almulzim/test/notebook_test.dart: notebook JSON round trip and search
+56:test/widget_test.dart:16:35: Error: Couldn't find constructor 'MyApp'.
+59:test/widget_test.dart:23:34: Error: Undefined name 'Icons'.
+62:lib/main.dart:63:18: Error: The method 'StrictWebPage' isn't defined for the type '_BootState'.
+63: - '_BootState' is from 'package:almulzim/main.dart' ('lib/main.dart').
+67:lib/main.dart:65:18: Error: The method 'StrictMoodlePage' isn't defined for the type '_BootState'.
+68: - '_BootState' is from 'package:almulzim/main.dart' ('lib/main.dart').
+72:lib/focus/storage.dart:356:49: Error: Undefined name 'kInk2'.
+76:::group::❌ loading /home/runner/work/almulzim/almulzim/test/widget_test.dart (failed)
+77:Failed to load "/home/runner/work/almulzim/almulzim/test/widget_test.dart":
+78:Compilation failed for testPath=/home/runner/work/almulzim/almulzim/test/widget_test.dart: Error: Couldn't resolve the package 'material_ui' in 'package:material_ui/material_ui.dart'.
+79:test/widget_test.dart:9:8: Error: Not found: 'package:material_ui/material_ui.dart'
+82:test/widget_test.dart:16:35: Error: Couldn't find constructor 'MyApp'.
+85:test/widget_test.dart:23:34: Error: Undefined name 'Icons'.
+88:lib/main.dart:63:18: Error: The method 'StrictWebPage' isn't defined for the type '_BootState'.
+89: - '_BootState' is from 'package:almulzim/main.dart' ('lib/main.dart').
+93:lib/main.dart:65:18: Error: The method 'StrictMoodlePage' isn't defined for the type '_BootState'.
+94: - '_BootState' is from 'package:almulzim/main.dart' ('lib/main.dart').
+98:lib/focus/storage.dart:356:49: Error: Undefined name 'kInk2'.
+105:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: classifyUrl by extension
+106:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: classifyUrl by Moodle module
+107:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: classifyUrl external
+108:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: normalizeUrl resolves, drops fragments, rejects non-http
+109:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCourseLinks unique by id, longest title wins
+110:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage title and sections
+111:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage activity names have hidden text removed
+112:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage week 1 items
+113:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage nav, availability restrictions and footer links are ignored
+114:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage section pages of the same course are detected
+115:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: parseCoursePage page without section markup still yields one section
+116:✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: submission status is read from the status label only
+117:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages folder files
+118:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages page links include embedded media but not the page itself
+119:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages book chapters
+120:✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: english due date with time
+121:✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: month-first format
+122:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: other pages URL activity target and resource target
+123:✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: arabic levantine month and Arabic-Indic digits
+124:✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: quiz closes
+125:✅ /home/runner/work/almulzim/almulzim/test/due_test.dart: nothing found
+126:✅ /home/runner/work/almulzim/almulzim/test/parser_test.dart: model json tree round-trips
+127:✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: every provider has a model and base url
+128:✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: unknown provider falls back to the first
+129:✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: settings round-trip keeps provider and base url
+130:✅ /home/runner/work/almulzim/almulzim/test/ai_test.dart: ai readiness: key required except custom/local
+131:✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: explicit chapter numbers, Latin and Arabic digits
+132:✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: items in one generic section are split into batches by upload rhythm
+133:✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: explicit numbers win and meaningful sections are kept
+134:✅ /home/runner/work/almulzim/almulzim/test/chapters_test.dart: inside a chapter videos come before files and assignments
+135:✅ /home/runner/work/almulzim/almulzim/test/alerts_test.dart: reminders are moved into the allowed study window
+136:✅ /home/runner/work/almulzim/almulzim/test/alerts_test.dart: news notification names the course and the kind
+137:✅ /home/runner/work/almulzim/almulzim/test/alerts_test.dart: reminders: deadline, exam and daily study; submitted work is skipped
+138:✅ /home/runner/work/almulzim/almulzim/test/viewer_test.dart: YouTube video ids are read from every common link shape
+139:✅ /home/runner/work/almulzim/almulzim/test/viewer_test.dart: the browser only allows Moodle, YouTube and Google Drive / Docs
+140:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: Pool never exceeds its limit and finishes everything
+141:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: crawls a course tree, resolving files, folders, urls and pages
+142:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: a failing page is retried once, recorded, and does not stop the crawl
+143:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: never requests other sites
+144:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: every page is requested at most once per attempt (no duplicates)
+145:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: a day never holds more study than the allowed window
+146:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: only study items become tasks, durations come from the title or defaults
+147:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: the user-typed minutes win over every estimate
+148:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: plenty of time: feasible, nothing left over, work starts today
+149:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: not enough time: the shortfall is reported
+150:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: the course with the closer exam gets more of today
+151:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: finished items leave the plan and raise progress
+152:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: requests run in parallel but stay under the concurrency limit
+153:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: computeNews lists only items that were not there before
+154:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: settings and study data survive a JSON round trip
+155:✅ /home/runner/work/almulzim/almulzim/test/planner_test.dart: last study day is chosen by the user; a course with an exam stops the day before it
+156:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: several courses are crawled at the same time
+157:✅ /home/runner/work/almulzim/almulzim/test/crawler_test.dart: section pages are merged into the course
+160:::error::59 tests passed, 1 failed.
