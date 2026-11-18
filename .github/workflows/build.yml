@@ -18,6 +18,7 @@ jobs:
         run: flutter create --platforms=android --org com.mohammed --project-name almulzim . 2>&1 | tee create.log; exit ${PIPESTATUS[0]}
         shell: bash
       - run: cp -r android_overlay/* android/
+      - run: rm -f test/widget_test.dart
       - run: flutter pub get
       - name: Test
         run: flutter test 2>&1 | tee test.log

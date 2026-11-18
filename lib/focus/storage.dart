@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'channel.dart';
+import 'theme.dart';
 
 // Public folder on the phone's storage: survives uninstalling the app and is visible in any file manager.
 //   /storage/emulated/0/FocusLock/videos     (subfolders = subjects)

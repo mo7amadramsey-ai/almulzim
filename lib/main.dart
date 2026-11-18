@@ -4,7 +4,8 @@ import 'channel.dart';
 import 'focus/app_lock.dart' show AppLockGate;
 import 'focus/nav.dart';
 import 'focus/player_page.dart' show PlayerPage;
-import 'focus/strict_shell.dart' show StrictWebPage, StrictMoodlePage;
+import 'focus/browser_page.dart' show StrictWebPage;
+import 'focus/moodle_page.dart' show StrictMoodlePage;
 import 'pages/shell.dart';
 import 'theme.dart';
 
