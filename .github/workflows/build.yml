@@ -48,10 +48,16 @@ jobs:
           fi
           AS=$(ls $ANDROID_HOME/build-tools/*/apksigner | sort -V | tail -1)
           APK=build/app/outputs/flutter-apk/app-release.apk
+          BT=$(dirname "$AS")
+          # strip old signatures, then zipalign (required: extractNativeLibs=false needs aligned .so), then sign
+          zip -q -d "$APK" 'META-INF/*.SF' 'META-INF/*.RSA' 'META-INF/*.DSA' 'META-INF/*.EC' 'META-INF/MANIFEST.MF' || true
+          "$BT/zipalign" -f -P 16 4 "$APK" "$APK.aligned" || "$BT/zipalign" -f -p 4 "$APK" "$APK.aligned"
+          mv "$APK.aligned" "$APK"
           "$AS" sign --ks /tmp/al.jks --ks-key-alias almulzim --ks-pass pass:"$PASS" --key-pass pass:"$PASS" "$APK"
           rm -f /tmp/al.jks
           "$AS" verify --verbose "$APK" | grep -E "Verifies|v2|v3" | head -5
           unzip -tq "$APK"
+          "$BT/zipalign" -c -v 4 "$APK" | tail -n 3
           echo "SHA=$(sha256sum $APK | cut -d' ' -f1)" >> $GITHUB_ENV
       - name: Publish build log on failure
         if: failure()
