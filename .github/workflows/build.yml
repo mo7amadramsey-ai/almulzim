@@ -1,0 +1,75 @@
+name: Build APK
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '21' }
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable }
+      # Generate the Android scaffolding (existing files are kept), then overlay our native code
+      - run: flutter create --platforms=android --org com.mohammed --project-name almulzim .
+      - run: cp -r android_overlay/* android/
+      - run: flutter pub get
+      - name: Test
+        run: flutter test 2>&1 | tee test.log
+        shell: bash
+      - name: Build APK
+        run: flutter build apk --release --target-platform android-arm,android-arm64 --build-number=${{ github.run_number }} 2>&1 | tee build.log
+        shell: bash
+      # One permanent signing key so every build can update the previous one.
+      # Uses the AL_KEYSTORE_B64 / AL_KEYSTORE_PASS secrets when present, otherwise a key generated once and kept in the Actions cache.
+      - name: Restore generated key (fallback)
+        uses: actions/cache@v4
+        with:
+          path: almulzim.jks
+          key: almulzim-keystore-v1
+      - name: Sign APK
+        env:
+          KS_B64: ${{ secrets.AL_KEYSTORE_B64 }}
+          KS_PASS: ${{ secrets.AL_KEYSTORE_PASS }}
+        shell: bash
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > /tmp/al.jks; PASS="$KS_PASS"
+          else
+            PASS=almulzim-build-key
+            [ -f almulzim.jks ] || keytool -genkeypair -keystore almulzim.jks -alias almulzim -keyalg RSA -keysize 2048 -validity 10000 -storepass $PASS -keypass $PASS -dname "CN=Almulzim"
+            cp almulzim.jks /tmp/al.jks
+          fi
+          AS=$(ls $ANDROID_HOME/build-tools/*/apksigner | sort -V | tail -1)
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          "$AS" sign --ks /tmp/al.jks --ks-key-alias almulzim --ks-pass pass:"$PASS" --key-pass pass:"$PASS" "$APK"
+          rm -f /tmp/al.jks
+          "$AS" verify --verbose "$APK" | grep -E "Verifies|v2|v3" | head -5
+          unzip -tq "$APK"
+          echo "SHA=$(sha256sum $APK | cut -d' ' -f1)" >> $GITHUB_ENV
+      - name: Publish build log on failure
+        if: failure()
+        run: |
+          mkdir /tmp/bl; touch test.log build.log
+          cat test.log build.log | grep -nE "Error|error:|FAILURE|What went wrong|lib/|test/|Expected|Actual|EXCEPTION|Some tests failed" | head -120 > /tmp/bl/errors.txt || true
+          { tail -n 80 test.log; echo ======; tail -n 80 build.log; } > /tmp/bl/tail.txt || true
+          git config user.name github-actions; git config user.email actions@github.com
+          git checkout --orphan buildlog; git rm -rf . -q
+          cp /tmp/bl/errors.txt /tmp/bl/tail.txt .
+          git add errors.txt tail.txt; git commit -qm "build log"; git push -f origin buildlog
+      - uses: actions/upload-artifact@v4
+        with:
+          name: almulzim-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: المُلزم v1.0.${{ github.run_number }}
+          files: build/app/outputs/flutter-apk/app-release.apk
+          make_latest: true
+          body: |
+            SHA-256: `${{ env.SHA }}`
+            إذا فشل التثبيت: احذف أي نسخة قديمة من التطبيق أولاً وأعد تنزيل الملف على واي فاي مستقر.

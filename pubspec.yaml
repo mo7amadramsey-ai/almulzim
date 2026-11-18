@@ -1,0 +1,38 @@
+name: almulzim
+description: المُلزم - study discipline system: Moodle import, smart plan, strict focus lock, restricted YouTube, downloads, documents.
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  webview_flutter: ^4.9.0
+  webview_flutter_android: any
+  html: ^0.15.4
+  path_provider: ^2.1.0
+  wakelock_plus: ^1.2.0
+  video_player: ^2.8.0
+  youtube_explode_dart: ^2.3.0
+  pdfx: ^2.9.2
+  archive: ^3.6.1
+  local_auth: ^2.3.0
+  file_picker: ^10.3.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
+  fonts:
+    - family: Tajawal
+      fonts:
+        - asset: assets/fonts/Tajawal-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Tajawal-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Tajawal-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Tajawal-ExtraBold.ttf
+          weight: 800
